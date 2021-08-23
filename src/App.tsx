@@ -1,7 +1,14 @@
-import { greet } from "./utils/greet";
+import PostInput from "./components/PostInput";
+import PostTable from "./components/PostTable";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App(): JSX.Element {
-  return <h1>{greet("World")}</h1>;
+  return(
+    <>
+      <PostInput/>
+      <PostTable/>
+    </>
+  )
 }
 
 export default App;
