@@ -1,4 +1,4 @@
-import react from "react";
+
 import { listOfPastes } from "../utils/interface";
 import { Modal, Button } from "react-bootstrap";
 import { useState } from "react";
@@ -11,21 +11,21 @@ export default function EditPost({ post }: listOfPastes): JSX.Element {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  
+
   // edit Description function
-  async function updateDescription(e: any) {
+  async function updateDescription(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault();
     try {
       const body = { description };
-      const response = await fetch(
-        `http://localhost4000/post/${post.post_id}`,
+      await fetch(
+        `https://sleepy-mountain-69917.herokuapp.com/${post.post_id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(body),
         }
       );
-      console.log(response)
+      //The window.location object can be used to get the current page address (URL) and to redirect the browser to a new page
     } catch (err) {
       console.log(err.message);
     }
@@ -56,7 +56,10 @@ export default function EditPost({ post }: listOfPastes): JSX.Element {
           </Button>
           <Button
             variant="primary"
-            onClick={(e) => {updateDescription(e);handleClose()}} //wrapping multiple functions within an onClick // https://stackoverflow.com/questions/26069238/call-multiple-functions-onclick-reactjs
+            onClick={(e) => {
+              updateDescription(e);
+              handleClose();
+            }} //wrapping multiple functions within an onClick // https://stackoverflow.com/questions/26069238/call-multiple-functions-onclick-reactjs
           >
             Save Edit
           </Button>
