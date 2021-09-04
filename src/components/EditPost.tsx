@@ -1,4 +1,3 @@
-
 import { listOfPastes } from "../utils/interface";
 import { Modal, Button } from "react-bootstrap";
 import { useState } from "react";

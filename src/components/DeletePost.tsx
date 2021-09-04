@@ -1,4 +1,3 @@
-
 // import pastes from "./PostTable"
 import { listOfPastes } from "../utils/interface";
 
@@ -11,7 +10,7 @@ export default function DeletePost({
   const deletePost = async (id: number) => {
     try {
       //delete id specified as the parameter
-       await fetch(`https://sleepy-mountain-69917.herokuapp.com/${id}`, {
+      await fetch(`https://sleepy-mountain-69917.herokuapp.com/${id}`, {
         method: "DELETE",
       });
     } catch (err) {

@@ -9,7 +9,7 @@ export interface listOfPastes {
   //ption
   post: pastes;
   posts?: pastes[];
-  onPostChange?: any;
+  onPostChange?: React.Dispatch<React.SetStateAction<pastes[]>>;
 }
 
 // instead of two seperate interfaces, perhaps considering the shape of an object of objects

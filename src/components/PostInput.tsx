@@ -9,11 +9,14 @@ export default function PostInput(): JSX.Element {
     e.preventDefault();
     try {
       const body = { title, description };
-      const response = await fetch("https://sleepy-mountain-69917.herokuapp.com/input", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body), //understand this code- fetching post request
-      });
+      const response = await fetch(
+        "https://sleepy-mountain-69917.herokuapp.com/input",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body), //understand this code- fetching post request
+        }
+      );
 
       console.log(response);
     } catch (err) {
